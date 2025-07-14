@@ -98,11 +98,11 @@ class UATree : public Tree {
         }
 };
 
-ll K(double c, double eps) {
+ll K(double c, double eps) {       // This is the function K from the paper
     return ceil(exp(c + c*sqrt(log(1.0/eps))));
 }
 
-double prob(ll K, int n, int N) {
+double prob(ll K, int n, int N) {       // Outputs an approximation of the probability that the root is among the top K lowest phi value vertices of a UA(n) distributed tree. The bigger N is, the better the approximation, but the more time it takes
     int cnt = 0;
     for (int i = 0; i < N; i++) {
         UATree tree = UATree(n);
@@ -112,7 +112,7 @@ double prob(ll K, int n, int N) {
     return ((double) cnt) / ((double) N);
 }
 
-bool solve(double c, int n) {
+bool solve(double c, int n) {       // Checks (approximately) whether the theorem of our paper holds with c is the constant
     double eps = 1.0;
     while (eps > 2e-4) {
         int Ka = K(c,eps);
@@ -124,13 +124,13 @@ bool solve(double c, int n) {
 }
 
 int main() {
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i < 20; i++) {      // Doing this 20 times
         double lo = 0.0;
         double hi = 3.0;
-        while (!(solve(hi,1000))) {hi *= 2; lo = hi/2;}
+        while (!(solve(hi,1000))) {hi *= 2; lo = hi/2;}     // Finding a valid value for hi
 
         double mid = (lo + hi)/2;
-        while (hi - lo > 1e-3) {
+        while (hi - lo > 1e-3) {       // Binary searching for c
             mid = (lo + hi)/2;
             cout << "mid = " << mid << endl;
             if (solve(mid, 1000)) hi = mid;
