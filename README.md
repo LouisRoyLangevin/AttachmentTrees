@@ -19,4 +19,4 @@ This is a very hard task, so to give ourselves an idea, I decided to write this 
 
 ## For more information
 
-I refer to my paper ["OPTIMAL ROOT RECOVERY FOR UNIFORM ATTACHMENT TREES AND d-REGULAR GROWING TREES"](https://arxiv.org/abs/2411.18614) published in 2024 on Arxiv. This paper contains more information about the process used to find the vertices with highest probability of being the root. This includes the definition of the logPhi function that you can find in the script.
+I refer to our paper ["OPTIMAL ROOT RECOVERY FOR UNIFORM ATTACHMENT TREES AND d-REGULAR GROWING TREES"](https://arxiv.org/abs/2411.18614) published in 2024 on Arxiv. This paper contains more information about the process used to find the vertices with highest probability of being the root. This includes the definition of the logPhi function that you can find in the script.
